@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout Example</title>
+    <style>
+        body {
+            background-color: rgb(11, 178, 255);
+        }
+
+        .container {
+            border: 2px solid black;
+            display: grid;
+            grid-template-rows: repeat(4,100px) ;
+            grid-template-columns: repeat(6,100px);
+            gap: 10px ;
+
+        }
+
+        .item {
+            background-color: green;
+        }
+
+        .item-1 {
+            background-color: blue;
+            /* grid-row-start: 1;
+            grid-row-end:3 ;
+            grid-column-start: 1;
+            grid-column-end: 5; */
+            grid-area: 1 / 1 / 3 / 3 ;
+        }
+
+        .item-2 {
+            background-color: blueviolet;
+            /* grid-row: 1 / 3;
+         grid-column: 5 / 7; */
+            /* or */
+            /* grid-row: span 2;   */
+            /*It  basically takes two row boxes & */
+            /* grid-column: span 2;  */
+            /*two column boxes */
+            /* but it doesnt show where is the starting and ending point*/
+            grid-area: 1 / 3 / 3 / 5 ;
+        }
+
+        .item-3 {
+            grid-area: 1 / 5 / 3  / 7 ;
+            background-color: darkorange;
+        }
+        .item-4{
+            background-color: springgreen;
+            grid-area: 3 / 1 / 5 / 4 ;
+        }
+        .item-5{
+            background-color: rgb(238, 40, 14);
+            grid-area: 3 / 4 / 5 / 7 ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="item item-1">Box1</div>
+        <div class="item item-2">Box2</div>
+        <div class="item item-3">Box3</div>
+        <div class="item item-4">Box4</div>
+        <div class="item item-5">Box5</div>
+    </div>
+</body>
+
+</html>
